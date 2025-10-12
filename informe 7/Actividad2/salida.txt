@@ -1,0 +1,2 @@
+Java permite escribir archivos fácilmente.
+Esta es otra línea agregada al final.
