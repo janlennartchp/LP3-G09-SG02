@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(javac:*)",
+      "Bash(java:*)",
+      "Bash(echo:*)",
+      "Bash(jar tf:*)",
+      "Bash(cat:*)",
+      "Bash(jar xf:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
