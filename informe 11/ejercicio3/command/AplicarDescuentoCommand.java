@@ -1,1 +1,24 @@
-package command; import java.util.*; import strategy.*; public class AplicarDescuentoCommand implements Command{ private List<Producto> c; private Strategy s; private CalculadoraDePrecios calc; public AplicarDescuentoCommand(List<Producto> a,Strategy b,CalculadoraDePrecios cal){c=a;s=b;calc=cal;} public void execute(){ if(c.isEmpty()){System.out.println("Vacío");return;} calc.setStrategy(s); System.out.println("Total: "+calc.calcularPrecio(c)); }}
+package command;
+
+import java.util.List;
+import strategy.*;
+
+public class AplicarDescuentoCommand implements Command {
+
+    private List<Producto> carrito;
+    private CalculadoraDePrecios calc;
+    private Strategy strategy;
+
+    public AplicarDescuentoCommand(List<Producto> carrito, Strategy strategy, CalculadoraDePrecios calc) {
+        this.carrito = carrito;
+        this.strategy = strategy;
+        this.calc = calc;
+    }
+
+    @Override
+    public void execute() {
+        calc.setStrategy(strategy);
+        double total = calc.calcularPrecio(carrito);
+        System.out.println("Total con descuento: S/ " + total);
+    }
+}
