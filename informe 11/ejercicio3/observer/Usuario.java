@@ -1,6 +1,15 @@
 package observer;
-public class Usuario implements Observer{
+
+public class Usuario implements Observer {
+
     private String nombre;
-    public Usuario(String nombre){ this.nombre=nombre;}
-    public void update(String m){ System.out.println("Notificación para "+nombre+": "+m);}
+
+    public Usuario(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public void update(String mensaje) {
+        System.out.println("Notificación para " + nombre + ": " + mensaje);
+    }
 }
