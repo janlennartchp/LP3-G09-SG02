@@ -1,1 +1,21 @@
-package command; import java.util.*; import strategy.Producto; public class MostrarCarritoCommand implements Command{ private List<Producto> c; public MostrarCarritoCommand(List<Producto> c2){c=c2;} public void execute(){ System.out.println("--- Carrito ---"); if(c.isEmpty())System.out.println("(vacío)"); else for(Producto p:c) System.out.println(p.getNombre()+" - "+p.getPrecio()); }}
+package command;
+
+import java.util.List;
+import strategy.Producto;
+
+public class MostrarCarritoCommand implements Command {
+
+    private List<Producto> carrito;
+
+    public MostrarCarritoCommand(List<Producto> carrito) {
+        this.carrito = carrito;
+    }
+
+    @Override
+    public void execute() {
+        System.out.println("--- Carrito actual ---");
+        for (Producto p : carrito) {
+            System.out.println(p.getNombre() + " - S/ " + p.getPrecio());
+        }
+    }
+}
