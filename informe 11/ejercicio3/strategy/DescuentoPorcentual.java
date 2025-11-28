@@ -1,10 +1,19 @@
 package strategy;
+
 import java.util.List;
-public class DescuentoPorcentual implements Strategy{
-    public double aplicarDescuento(List<Producto> p){
-        if(p.size()==2 && p.get(0).getNombre().equals(p.get(1).getNombre())){
-            return p.stream().mapToDouble(Producto::getPrecio).sum()*0.70;
+
+public class DescuentoPorcentual implements Strategy {
+
+    @Override
+    public double aplicarDescuento(List<Producto> productos) {
+
+        if (productos.size() == 2 &&
+            productos.get(0).getNombre().equals(productos.get(1).getNombre())) {
+
+            double total = productos.stream().mapToDouble(Producto::getPrecio).sum();
+            return total * 0.70; // 30% de descuento
         }
-        return p.stream().mapToDouble(Producto::getPrecio).sum();
+
+        return productos.stream().mapToDouble(Producto::getPrecio).sum();
     }
 }
