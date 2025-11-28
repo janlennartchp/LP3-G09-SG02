@@ -1,1 +1,19 @@
-package command; import observer.Notificacion; public class NotificarCommand implements Command{ private Notificacion n; private String msg; public NotificarCommand(Notificacion x,String y){n=x;msg=y;} public void execute(){ n.nuevoEvento(msg);} }
+package command;
+
+import observer.Notificacion;
+
+public class NotificarCommand implements Command {
+
+    private Notificacion sistema;
+    private String mensaje;
+
+    public NotificarCommand(Notificacion sistema, String mensaje) {
+        this.sistema = sistema;
+        this.mensaje = mensaje;
+    }
+
+    @Override
+    public void execute() {
+        sistema.nuevoEvento(mensaje);
+    }
+}
