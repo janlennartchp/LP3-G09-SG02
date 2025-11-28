@@ -1,1 +1,21 @@
-package command; import strategy.*; import java.util.*; public class AgregarProductoCommand implements Command{ private List<Producto> c; private Producto p; public AgregarProductoCommand(List<Producto> c2,Producto p2){c=c2;p=p2;} public void execute(){ c.add(p); System.out.println("Agregado "+p.getNombre()); }}
+package command;
+
+import strategy.Producto;
+import java.util.List;
+
+public class AgregarProductoCommand implements Command {
+
+    private List<Producto> carrito;
+    private Producto producto;
+
+    public AgregarProductoCommand(List<Producto> carrito, Producto producto) {
+        this.carrito = carrito;
+        this.producto = producto;
+    }
+
+    @Override
+    public void execute() {
+        carrito.add(producto);
+        System.out.println("Producto agregado: " + producto.getNombre());
+    }
+}
