@@ -1,2 +1,5 @@
 package observer;
-public interface Observer { void update(String mensaje); }
+
+public interface Observer {
+    void update(String mensaje);
+}
