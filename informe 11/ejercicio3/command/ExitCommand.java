@@ -1,0 +1,1 @@
+package command; public class ExitCommand implements Command{ public void execute(){ System.out.println("Saliendo..."); System.exit(0);} }

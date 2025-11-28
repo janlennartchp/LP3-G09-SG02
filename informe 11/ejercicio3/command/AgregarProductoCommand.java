@@ -1,0 +1,1 @@
+package command; import strategy.*; import java.util.*; public class AgregarProductoCommand implements Command{ private List<Producto> c; private Producto p; public AgregarProductoCommand(List<Producto> c2,Producto p2){c=c2;p=p2;} public void execute(){ c.add(p); System.out.println("Agregado "+p.getNombre()); }}

@@ -1,0 +1,1 @@
+package command; import observer.Notificacion; public class NotificarCommand implements Command{ private Notificacion n; private String msg; public NotificarCommand(Notificacion x,String y){n=x;msg=y;} public void execute(){ n.nuevoEvento(msg);} }

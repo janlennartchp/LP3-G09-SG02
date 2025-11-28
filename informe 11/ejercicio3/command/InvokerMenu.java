@@ -1,0 +1,1 @@
+package command; import java.util.*; public class InvokerMenu{ private Map<Integer,Command> m=new HashMap<>(); public void addCommand(int o,Command c){m.put(o,c);} public void ejecutar(int o){Command c=m.get(o); if(c!=null)c.execute(); else System.out.println("Inválido");}}
