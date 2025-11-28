@@ -1,26 +1,22 @@
 package observer;
 
-public class MainObserver {
+import java.util.ArrayList;
+import java.util.List;
 
-    public static void main(String[] args) {
+public class Subject {
+    private List<Observer> observers = new ArrayList<>();
 
-        Notificacion sistema = new Notificacion();
+    public void attach(Observer o) {
+        observers.add(o);
+    }
 
-        Usuario u1 = new Usuario("Carlos");
-        Usuario u2 = new Usuario("María");
-        Usuario u3 = new Usuario("José");
+    public void detach(Observer o) {
+        observers.remove(o);
+    }
 
-        sistema.attach(u1);
-        sistema.attach(u2);
-        sistema.attach(u3);
-
-        System.out.println("Enviando Notificación 1 ");
-        sistema.nuevoEvento("Nueva promoción disponible!");
-
-        System.out.println(" María se desuscribe ");
-        sistema.detach(u2);
-
-        System.out.println("Enviando Notificación 2 ");
-        sistema.nuevoEvento("Producto en oferta!");
+    public void notifyObservers(String mensaje) {
+        for (Observer o : observers) {
+            o.update(mensaje);
+        }
     }
 }
