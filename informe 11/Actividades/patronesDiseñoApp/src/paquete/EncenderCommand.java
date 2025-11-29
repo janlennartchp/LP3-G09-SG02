@@ -1,0 +1,14 @@
+package paquete;
+
+public class EncenderCommand implements Comando {
+    private Televisor tv;
+
+    public EncenderCommand(Televisor tv) {
+        this.tv = tv;
+    }
+
+    @Override
+    public void ejecutar() {
+        tv.encender();
+    }
+}
